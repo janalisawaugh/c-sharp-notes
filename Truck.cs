@@ -1,46 +1,23 @@
 using System;
 
-namespace LearnInterfaces
+namespace LearnInheritance
 {
-  class Truck : IAutomobile
-  {
-
-    public Truck(double speed, double weight)
-    {
-      Speed = speed;
-      Weight = weight;
-      LicensePlate = Tools.GenerateLicensePlate();
-      Wheels = Weight<400? 8 : 12;
-    }
-
-  	public string LicensePlate
-    { get; }
-
+  class Truck : Vehicle, IAutomobile
+  { 
     public double Weight
-    {get;}
-
-    public double Speed
-    { 
-      get {return Speed;}
-      private set {Speed = value;} 
-    }
-
-    public int Wheels
     { get; }
-     
-    public void Honk()
+
+    public Truck(double speed, double weight) : base(speed)
     {
-      Console.WriteLine("HONK!");
+      Weight = weight;
+      Weight = weight<400? 8 : 12;
+
+      
     }
 
-    public void SpeedUp()
+     public override string Describe()
     {
-      Speed +=5;
-    }
-
-    public void SlowDown()
-    {
-      Speed -=5;
+      return $"This truck is moving on {Wheels} wheels at {Speed} km/h, with license plate {LicensePlate}";
     }
 
   }

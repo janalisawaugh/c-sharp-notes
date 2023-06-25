@@ -1,45 +1,18 @@
 using System;
 
-namespace LearnInterfaces
+namespace LearnInheritance
 {
-  class Sedan : IAutomobile
+  class Sedan : Vehicle, IAutomobile
   {
-
-    public Sedan(double speed)
+    public Sedan(double speed) : base(speed)
     {
-      Speed = speed;
-      LicensePlate = Tools.GenerateLicensePlate();
       Wheels = 4;
     }
 
-
-  	public string LicensePlate
-    { get; }
-
-    public double Speed
-    { 
-      get {return Speed;} 
-      private set {Speed = value;}
-    }
-
-    public int Wheels
-    { get; }
-    
-    public void Honk()
+     public override string Describe()
     {
-      Console.WriteLine("HONK!");
+      return $"This Sedan is moving on {Wheels} wheels at {Speed} km/h, with license plate {LicensePlate}";
     }
-
-    public void SpeedUp()
-    {
-      Speed +=5;
-    }
-
-    public void SlowDown()
-    {
-      Speed-=5;
-    }
-
     
   }
 }

@@ -18,5 +18,10 @@ namespace LearnReferences
     {
       return "This is a Book object!";
     }
+
+    public override string ToString()
+    {
+      return $"{Title} was written by {Author}";
+    }
   }
 }

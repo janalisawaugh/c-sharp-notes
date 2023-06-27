@@ -42,5 +42,91 @@ namespace LearnReferences
       To signify that a reference is “empty” or refers to no object, we set it equal to null
       If a reference is not set to any value it is unassigned and cannot perform any operations
       */
+      
+      //OBJECT TYPE
+      Book bk = new Book();
+      
+      Diary dy = new Diary(38);
+      
+      int i = 9;
+      Object o1 = bk;
+      Object o2 = dy;
+      Object o3 = i;
+
+      /*
+      Equals(Object) — returns true if the current instance and the argument are equal (using value equality for value types and referential equality for reference types)
+      GetType() — returns the type of the object
+      ToString() — returns a string describing the object
+      */
+
+      Book b = new Book();      
+      Diary d = new Diary(38);
+      Random r = new Random();
+      int i = 9;
+
+      Object[] objects = new Object[] {b,d,r,i};
+      foreach (Object o in objects)
+      {
+        Console.WriteLine(o.GetType());
+      }
+
+      /*The Equals() and ToString() methods in Object are virtual, 
+      so they can be overridden.*/
+
+      Book bk = new Book("Ta-Nehisi Coates", "Between the World and Me");
+
+      Console.WriteLine(bk.ToString());
+
+      //STRINGS
+      /*
+      A string reference will always point to the original object, 
+      so “modifying” one reference to a string will not affect other references.
+      Comparing strings with the equality operator (==) performs a value, 
+      not referential, comparison.   
+      Strings are immutable.   
+      */
+
+      string s1 = "immutable";
+      string s2 = "immutable";
+      Console.WriteLine(s1==s2);
+      //prints True
+      Object o1 = new Object ();
+      Object o2 = new Object ();      
+      Console.WriteLine(o1==o2);
+      //prints False
+
+      Console.WriteLine("Please enter a string: ");
+      string input = Console.ReadLine();
+      if (String.IsNullOrEmpty(input))
+      {
+        Console.WriteLine("You didn't enter anything!");
+      }
+      else
+      {
+        Console.WriteLine("Thank you for your submission!");
+      }
+
+      string lyrics = 
+        "Dollie, Dollie, bo-bollie,\n" +
+        "Banana-fana fo-follie\n" +
+        "Fee-fi-mo-mollie\n" +
+        "Dollie!";
+      
+      // Call `Replace()` here
+      lyrics = lyrics.Replace("ollie", "ana");      
+      
+      Console.WriteLine(lyrics);
+
+
+
+
+
+
+
+
+
+
+    }
   }
 }
+

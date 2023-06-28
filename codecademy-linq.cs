@@ -119,7 +119,16 @@ namespace LearnLinq
         Console.WriteLine(h);
       }
 
-      
+      List<string> heroesList = new List<string> { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+
+      var dot7 = heroesList
+        .Where (h => h.Contains(".") || h.Contains("7"))
+        .Select(h => h);
+
+      foreach (string h in dot7)
+      {
+        Console.WriteLine(h);
+      }
 
 
 
